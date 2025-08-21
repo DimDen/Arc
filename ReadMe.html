@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" />
+    <title>Рабочая тетрадь</title>
+    <link rel="stylesheet" href="style.css" />
+
+<style>
+body {
+	background-color: Window;
+	color: WindowText;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	line-height: 150%;
+	margin: 0;
+	padding: 25px;
+}
+
+h3 {
+	font-size: 14pt;
+}
+
+.line {
+	font-size: 95%;
+	font-weight: bold;
+	position: relative;
+	color: #FF4500;
+}
+
+.line span {
+	background-color: #ffffff;
+	position: relative;
+	z-index: 1;
+	padding: 0px 25px 0px 15px;
+
+}
+
+.line:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: #262626;
+	position: absolute;
+	top: 55%;
+	margin-top: -1px;
+	z-index: 0;
+}
+
+#signature {
+	font-size: 10pt;
+	font-weight: bold;
+	font-family: 'Trebuchet MS', Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	text-align: right;
+	margin: 0;
+	color: red;
+	text-decoration-line: overline;
+	/*padding-right: 25px;*/
+}
+
+li {
+	list-style: none;
+	/* Скрываем маркеры списка */
+	text-indent: -1em;
+	/* Сдвигаем элементы списка влево */
+	padding-left: 15px;
+}
+
+li::before {
+	content: '\00BB';
+	/* Добавляем маркер в шестнадцатеричном формате*/
+	padding-right: 10px;
+	/* Расстояние от маркеров до текста */
+	color: #d2691e;
+	/* Маркеры красного цвета */
+}
+
+.blockquote-1 {
+	/*box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);*/
+	margin: 16px 16px 30px 60px;
+	padding: 16px 24px;
+	position: relative;
+	font-size: 13px;
+	background: #efefef;
+	color: #000;
+	/*font-style: italic;*/
+}
+
+.blockquote-1::before {
+	border: 14px solid transparent;
+	border-top: 14px solid #efefef;
+	border-bottom: 0;
+	height: 0;
+	width: 0;
+	border-top-width: 25px;
+	content: '';
+	display: block;
+	position: absolute;
+	left: 40px;
+	bottom: -25px;
+	transform-origin: center;
+	transform: rotate(90deg) skew(-25deg) translateY(17px);
+}
+
+.blockquote-1 cite {
+	position: absolute;
+	bottom: -24px;
+	left: 72px;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 300;
+	color: #000;
+}
+
+.blockquote-3 {
+	position: relative;
+	text-align: left;
+	margin: 16px 16px 34px 16px;
+	border: 4px solid #337AB7;
+	border-radius: 20px;
+	padding: 16px 24px;
+	font-size: 18px;
+}
+
+.blockquote-3:before,
+.blockquote-3:after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+.blockquote-3:before {
+	left: 30px;
+	bottom: -32px;
+	border: 16px solid;
+	border-color: #337AB7 transparent transparent #337AB7;
+}
+
+.blockquote-3:after {
+	left: 35px;
+	bottom: -21px;
+	border: 12px solid;
+	border-color: #fff transparent transparent #fff;
+}
+
+.blockquote-3 cite {
+	position: absolute;
+	bottom: -28px;
+	left: 62px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #337AB7;
+}
+
+blockquote {
+	width: 80%;
+	margin: 5px auto;
+	margin-left: 2.2em;
+	font-family: 'Cascadia Code';
+	/*font-style: italic;*/
+	font-size: 1.0em;
+	color: #555555;
+	padding: 1.2em 30px 0.8em 15px;
+	border-left: 8px double #78C0A8;
+	line-height: 1.4;
+	position: relative;
+	background: #eee;
+}
+
+blockquote::before {
+	font-family: Consolas;
+	content: "\201C";
+	color: #78C0A8;
+	font-size: 2.0em;
+	position: absolute;
+	left: 10px;
+	top: -5px;
+}
+
+blockquote::after {
+	content: '';
+}
+
+blockquote span {
+	display: block;
+	color: #333333;
+	font-style: normal;
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+
+.arg_header {
+	font-size: 1.05em;
+	margin-top: 0.1em;
+	margin-bottom: 0.5em;
+}
+
+.arg_ul {
+	font-size: 1.0em;
+	color: rebeccapurple;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding-left: 2em;
+}
+
+.arg_li {
+	font-size: 0.95em;
+	color: darkslategray;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+
+	text-indent: -1.0em;
+	padding-left: 4.0em;
+}
+
+</style>
+
+</head>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------->
+<body>
+
+    <b>Usage:</b> arc 	&lt;destination&gt; 	&lt;source&gt;	[options]<hr>
+    <p class="arg_header">Параметры:</p>
+    <p class="arg_ul">Имя архива (первый аргумент - destination)</p>
+    <p class="arg_li">&#10004; Абсолютный - т.е. в имени присутствует полный путь к файлу архива, например "<b>D:\Data\archiv</b>". Расширение указывать 
+        необязательно, оно проставится само.</p>
+    <p class="arg_li">&#10004; Относительный, это означает, что путь будет строится относительно текущего каталога, например 
+        "<b>.\Data\archiv</b>". Расширение так-же проставится автоматически.</p>
+    <p class="arg_li">&#10004; По умолчанию, это когда указываешь толко само имя архива. Располагаться он будет на диске <b>D:\</b> 
+    в корне. Например такой командой: <b>arc new-archive</b></p>
+
+    <p class="arg_ul">Данные для архивации (второй аргумент - source)</p>
+    <p class="arg_li">&#10004; Текущий каталог. В этом случае можно вообще его опустить, не указывать. В таком случае заархивируется вся
+    текущая каталог, вместе с подпапками.</p>
+    <p class="arg_li">&#10004; Абсолютный путь к данным: если Вы хорошо представляете где расположены Ваши данные - уазываете это место.
+    Например - <b>E:\Data\Archives</b>. В итоге в архиве будет расположен каталог <b>Archives</b></p>
+
+<hr /><br />
+        <!----------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3 id="1" class="line"><span>14-08-2025</span></h3>
+        <ul class="markers">
+            <li>1️⃣   Переделал разбор аргументов командной строки, теперь чётко различаются правильные агрументы, неправильные и ...пути.</li>
+            <li>Добавил функцию ShowHelp. При любых неправильных атрибутах, или воовще их отсутствие - показывает справку.</li>
+            <li>Приложение не запускается без установленного FrameWork, довольно обидно, хотя он сейчас у всех стоит.</li>
+        </ul>
+        <!----------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3 id="1" class="line"><span>15-08-2025</span></h3>
+        <ul>
+            <li>LHA не воспринимает русский язык в архивах</li>
+            <li>Окончательно определился с выбором арзива - 7Z (жмет очень хорошо, быстрый, понимает русский, показывает общий индикатор выполнения) </li>
+            <li>Командная строка работает исправно</li>
+            <li>воовще их отсутствие - показывает справку.</li>
+        </ul>
+        <!----------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3 id="1" class="line"><span>16-08-2025</span></h3>
+        <ul>
+            <li>Так и не разобрался с датой и временем (</li>
+            <li>
+                Архив упаковывается с ключом <b>-bsp1</b>, работает только с новыми 7Z, старые выдают ошибку и выскакивают из программы.
+                Этот ключ убирает список архивируемых фалов и вместо этого показывает общий прогресс архивации.
+            </li>
+            <li>Добавил еще один ключ <b>-ssw</b>. Он позволяет добавлять открые файлы.</li>
+        </ul>
+        <!----------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3 id="1" class="line"><span>19-08-2025</span></h3>
+        <ul>
+            <li>
+                Наконец-то разобрался с датой и временем, вместо всяких структур и преобразований из числа в строку - вре решилось тривильно )))
+            </li>
+            <blockquote>
+                time_t t = time(0);   // get time now<br />
+                struct tm* now = localtime(&t);<br />
+                char buffer[80];<br />
+                strftime(buffer, 80, "%d.%m.%Y @ %H-%M", now); //большими буквами - чтобы выводились целиком ()<br />
+                std::cout  << buffer << endl;<br />
+            </blockquote>
+            <li>Сделал проверку на наличие вообще каких бы то нибыло аргументов, если нет выход с сообщением об ошибке.</li>
+            <blockquote>
+                /* разбор командной строки (command line parsing) */ <br />
+                if (argc == 1) {    // если в аргументах только имя программы<br />
+                ShowMessage("There are not enough parameters to execute... (не хватает параметров для выполнения!)");<br />
+                system("pause");<br />
+                exit( EXIT_FAILURE );   // or  EXIT_FAILURE or EXIT_SUCCESS<br />
+                }<br />
+            </blockquote>
+            <li>Разбираем командную строку, для начала нужно проверить <i><u>валидность</u></i> пути к архиву</li>
+            <li>Теперь проверка</li>
+        </ul>
+        <!----------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3 id="1" class="line"><span>20-08-2025</span></h3>
+        <ul>
+            <li>Добавил функцию <b>ShowMessage(string)</b> - выводит сообщение на экран (больше ничего).</li>
+            <li>Заработал первый аргумент (имя архива), теперь надо сделать - чтобы работал еще и без абсолютного пути.
+                Если в имени архива не указано имя диска - копируем в корень <b>C:\</b>
+            </li>
+            <li>Поправил кодовую страницу консоли, теперь <b>setlocale(LC_ALL, "Russian");</b></li>
+            <li>Для проверки имени создавал временный файл, если создался значит и архив можно создать - НО - удалить не могу (</li>
+        </ul>
+        <!----------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3 id="1" class="line"><span>21-08-2025</span></h3>
+        <ul>
+            <li>Временный файл для проверки работает, откликается на неправильное имя и на отсутствие прав доступа. С первым аргументом разобрались.
+                Это был <u style="color:red;">обязательный</u> аргумент.
+            </li>
+            <li>Разбираюсь со вторым, еще и опции должны быть
+            </li>
+        </ul>
+
+
+        <!-- Подпись -->
+<p> </p> <p> </p>
+    <div id="signature">© 2025 by Dmirty Denkin</div>
+
+</body>
+</html>
+
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------
+<h3>SubLime Tezt</h3>  КАК ПОДКДЮЧИТЬ SUBLIME TEXT К БРАУЗЕРУ
+{
+"cmd": ["C:\\Users\\user\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe ", "$file"]
+}
+
+Yandex.sublime-build
+
+А насколько мне известно Sublime для того и создан что бы добавлять нужный для себя функционал ;)
+
+Все достасточно просто и немного зависит от вашей ОС
+
+Для начала создадим новую систему сборки
+
+Tools -> Build System -> New Build System...
+в открывшемся нужно написать:
+меня 8.1 но должно работать почти на всех)
+
+{
+"cmd": ["Путь до браузера", "$file"]
+}
+У меня это "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+При этом двойной слеш нужен для экранирования
+
+Собственно все, сохраняем файл как Chrome.sublime-build
+
+Закрываем и открываем снова SublimeText
+
+Заходим в
+
+Tools -> Build System
+Выбираем Chrome и запускать открытые файлы в нем можно нажатием Ctrl+B
+------------------------------------------------------------------------------------------------------------------------------------------->
